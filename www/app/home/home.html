@@ -1,0 +1,45 @@
+<ion-view view-title="Home">
+  <ion-content>
+    home content
+    <section id="home-login-section" class="home-form-container">
+      <div class="row responsive-sm">
+        <div class="col">
+          <label class="item item-input">
+            <input type="text" id="username" placeholder="Username or Email" ng-model="vm.profile.username">
+          </label>
+        </div>
+      </div>
+      <div class="row responsive-sm">
+        <div class="col">
+          <label class="item item-input">
+            <input type="password" id="password" placeholder="Password" ng-model="vm.profile.password">
+          </label>
+        </div>
+      </div>      
+      <div class="row responsive-sm">
+        <div class="col">
+          <button type="button" class="button button-large button-positive" ng-click="">Login</button>
+        </div>
+      </div>      
+      <div class="row responsive-sm">
+        <div class="col">
+          <span>Forgot Password?</span>
+        </div>
+      </div>
+    </section>
+    
+    <section id="home-register-section" class="home-form-container">            
+      <div class="row responsive-sm">
+        <div class="col">
+          <button type="button" class="button button-large button-positive" ng-click="">Register</button>
+        </div>
+      </div>
+      
+      <div class="row responsive-sm">
+        <div class="col">
+          <span>Forgot Password?</span>
+        </div>
+      </div>
+    </section>
+  </ion-content>
+</ion-view>

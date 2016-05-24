@@ -1,0 +1,29 @@
+/* Home Screen */
+.home-form-container {
+    height: 50vh;
+    vertical-align: middle;
+    text-align: center;
+    background: #fff;
+    padding: 2vh;
+    margin: 2vh;
+}
+
+/* Registration Screen */
+.register-form-container {
+    height: 100vh;
+    vertical-align: middle;
+    text-align: center;
+    background: #fff;
+    padding: 2vh;
+    margin: 2vh;
+}
+
+/* Flight Finder Screen */
+.flightfinder-container {
+    height: 100vh;
+    vertical-align: middle;
+    text-align: center;
+    background: #fff;
+    padding: 2vh;
+    margin: 2vh;
+}

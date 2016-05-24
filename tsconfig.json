@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "noLib": false
+  },
+  "exclude": [
+    "hooks",
+    "node_modules",
+    "plugins",
+    "scss",
+    "www/css",
+    "www/img",
+    "www/lib",
+    "typings/browser.d.ts",
+    "typings/browser"
+  ]
+}

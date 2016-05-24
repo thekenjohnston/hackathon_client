@@ -1,0 +1,47 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button class="button-clear">
+        <i class="ion-chevron-left"></i> Back
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="container"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" class="bh-side-menu">
+    <ion-header-bar class="bar-dark">
+      <h1 class="title"><span class="icon ion-android-globe"></span> iTravel</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item menu-close href="#/app/home"><span class="icon ion-home "></span> HOME</ion-item>
+        <ion-item menu-close href="#/app/register"><span class="icon ion-social-linkedin-outline "></span> REGISTER</ion-item>
+        <ion-item menu-close href="#/app/flightfinder"><span class="icon ion-android-plane"></span> FLIGHT FINDER</ion-item>
+        <ion-item menu-close href="#/app/offers"><span class="icon ion-pricetags"></span> OFFERS</ion-item>
+        <ion-item menu-close href="#/app/settings"><span class="icon ion-ios-settings"></span> SETTINGS</ion-item>
+      </ion-list>
+    </ion-content>
+    <ion-footer-bar class="bar-footer text-center bh-side-footer bar-dark">
+      <div class="row">
+        <div class="col">
+          <span class="icon ion-social-linkedin"></span>
+        </div>
+        <div class="col">
+          <span class="icon ion-social-twitter"></span>
+        </div>
+        <div class="col">
+          <span class="icon ion-social-facebook"></span>
+        </div>
+        <div class="col">
+          <span class="icon ion-social-googleplus"></span>
+        </div>
+      </div>
+    </ion-footer-bar>
+  </ion-side-menu>
+
+</ion-side-menus>

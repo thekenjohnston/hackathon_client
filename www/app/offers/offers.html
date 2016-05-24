@@ -1,0 +1,16 @@
+<ion-view view-title="Latest Airport Offers" hide-back-button="true" class="bh-offers-view">
+  <ion-content>
+    <div class="text-center bh-no-offers" ng-show="vm.getOffers().length === 0">
+      <span class="icon ion-sad-outline"></span>
+      <p>No offers currently available</p>
+    </div>
+
+    <div class="list card" ng-repeat="offer in vm.getOffers()">
+      <div class="item item-icon-left">
+        <span class="icon ion-{{offer.icon}}"></span>
+        <h2>{{offer.name}}</h2>
+        <p>{{offer.description}}</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

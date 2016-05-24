@@ -1,0 +1,90 @@
+<ion-view view-title="Register">
+  <ion-content delegate-handle="content">
+    <section id="personal-details-section" class="register-form-container">
+      <div class="row responsive-sm">
+        <div class="col">
+          <label class="item item-input">
+            <input type="text" id="username" placeholder="Username" ng-model="vm.profile.username">
+          </label>
+        </div>
+      </div>
+
+      <div class="row responsive-sm">
+        <div class="col">
+          <label class="item item-input">
+            <input type="password" id="password" placeholder="Password" ng-model="vm.profile.password">
+          </label>
+        </div>
+      </div>
+
+      <div class="row responsive-sm">
+        <div class="col">
+          <label class="item item-input">
+            <input type="date" id="dateOfBirth" placeholder="Date of Birth" ng-model="vm.profile.dateOfBirth">
+          </label>
+        </div>
+      </div>
+
+      <div class="row responsive-sm">
+        <div class="col">
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Nationality
+            </div>
+            <select id="nationality">
+              <!-- add ng-repeat/options here -->
+              <option selected>Select Nationality</option>
+              <option>Ireland</option>
+              <option>Red</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="row responsive-sm">
+        <div class="col">
+          <button type="button" class="button button-large button-positive" ng-click="vm.handleCreateAcccount()">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="linkedin-section" class="register-form-container">
+      <div class="row responsive-sm">
+        <div class="col">
+          <h1>Get LinkedIn with colleague</h1>
+          <div>
+            <button type="button" class="button button-large button-positive" ng-click="vm.handleConnectWithLinkedIn()">Connect with LinkedIn</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="finish-section" class="register-form-container">
+      <div class="row responsive-sm">
+        <div class="col">
+          <h1>Preferences</h1>
+        </div>
+      </div>      
+      <div class="row responsive-sm">
+        <div class="col">
+          <ul class="list">
+            <li>
+              <ion-toggle ng-model="vm.profile.shareLocation" toggle-class="toggle-calm" ng-checked="true">Stay connect with company staff?</ion-toggle>
+            </li>
+            <li>
+              <ion-toggle ng-model="vm.profile.notifyFlightChange" toggle-class="toggle-calm" ng-checked="true">Get in flight status changes?</ion-toggle>
+            </li>
+            <li>
+              <ion-toggle ng-model="vm.profile.notifyFlightChange" toggle-class="toggle-calm" ng-checked="true">Get in flight status changes?</ion-toggle>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row responsive-sm">
+        <div class="col">
+          <button type="button" class="button button-large button-positive" ng-click="vm.handleSubmit()">Finish and Go to Profile</button>
+        </div>
+      </div>
+    </section>
+  </ion-content>
+</ion-view>

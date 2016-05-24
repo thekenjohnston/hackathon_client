@@ -1,0 +1,70 @@
+@import "www/lib/ionic/scss/ionic";
+
+$sb-dark: #17252E;
+$sb-light: #374852;
+$sb-item: #233342;
+
+.bh-side-menu {
+  .bar {
+    background: $sb-dark;
+  }
+
+  ion-content {
+    background: $sb-light;
+  }
+
+  .item-complex {
+    border: none;
+  }
+
+  .item .item-content.activated {
+    background-color: $sb-dark;
+  }
+
+  .item-content {
+
+    background: $sb-item;
+    color: #ffffff;
+
+    .icon {
+      font-size: 18px;
+    }
+
+    .ion-home {
+      color: #00E676;
+    }
+
+    .ion-social-linkedin-outline {
+      color: #C6FF00;
+    }
+
+    .ion-android-plane {
+      color: #64FFDA;
+    }
+
+    .ion-pricetags {
+      color: #B388FF;
+    }
+
+    .ion-ios-settings {
+      color: #FFFF00;
+    }
+  }
+
+  .bar.bar-dark.bar-footer {
+    background-image: none;
+  }
+
+  ion-footer-bar {
+    background-color: $sb-dark;
+
+    span.icon {
+      font-size: 16px;
+    }
+
+    div.row {
+      background-image: $sb-dark;
+    }
+
+  }
+}

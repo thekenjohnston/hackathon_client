@@ -1,0 +1,10 @@
+{
+  "name": "sita-berlin-hackathon",
+  "app_id": "",
+  "gulpStartupTasks": [
+    "sass", 
+    "compile", 
+    "injector",
+    "watch"
+  ]
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Berlin Hackathon</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/ionic.app.css">
+    <link rel="stylesheet" href="css/ionic.app.min.css">
+    <link rel="stylesheet" href="css/offers.css">
+    <link rel="stylesheet" href="css/offers.min.css">
+    <link rel="stylesheet" href="css/side.menu.css">
+    <link rel="stylesheet" href="css/side.menu.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- endinject -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ng-cordova-oauth/dist/ng-cordova-oauth.js"></script>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/signalr/jquery.signalR.js"></script>
+    <script src="lib/angular-signalr-hub/signalr-hub.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    
+    <!-- ########################################################################################## -->
+    <!--                           SAND BOX CODE FOR SETTING UP SIGNALR                             -->
+    <!-- ########################################################################################## -->
+    <!-- Server generated signalR script -->
+
+    <!-- ########################################################################################## -->
+    <!-- ########################################################################################## -->
+
+
+    <!-- your app's js -->
+    <!-- inject:js -->
+    <script src="app/app.module.js"></script>
+    <script src="app/flight-finder/flight-finder.module.js"></script>
+    <script src="app/home/home.module.js"></script>
+    <script src="app/offers/offers.module.js"></script>
+    <script src="app/register/register.module.js"></script>
+    <script src="app/tour/tour.module.js"></script>
+    <script src="app/core/beacon/beacon.module.js"></script>
+    <script src="app/core/settings/settings.module.js"></script>
+    <script src="app/core/notification/notification.module.js"></script>
+    <script src="app/app.config.js"></script>
+    <script src="app/app.route.js"></script>
+    <script src="app/flight-finder/flight-finder.route.js"></script>
+    <script src="app/home/home.route.js"></script>
+    <script src="app/offers/offers.route.js"></script>
+    <script src="app/register/register.route.js"></script>
+    <script src="app/core/settings/settings.route.js"></script>
+    <script src="app/app.run.js"></script>
+    <script src="app/flight-finder/flight-finder.service.js"></script>
+    <script src="app/offers/offers.service.js"></script>
+    <script src="app/core/beacon/beacon.service.js"></script>
+    <script src="app/core/settings/settings.service.js"></script>
+    <script src="app/core/notification/notification.service.js"></script>
+    <script src="app/app.controller.js"></script>
+    <script src="app/flight-finder/flight-finder.controller.js"></script>
+    <script src="app/home/home.controller.js"></script>
+    <script src="app/offers/offers.controller.js"></script>
+    <script src="app/register/register.controller.js"></script>
+    <script src="app/core/settings/settings.controller.js"></script>
+    <!-- endinject -->
+  </head>
+
+  <body ng-app="app">
+    <ion-nav-view></ion-nav-view>
+  </body>
+
+</html>

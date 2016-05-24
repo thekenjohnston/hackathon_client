@@ -1,0 +1,170 @@
+<ion-view view-title="Find Flight to Manage">
+  <ion-content delegate-handle="content">
+
+
+    <section id="flight-finder-options-section" class="flightfinder-container">
+      <h4>How do you want to find your flight?</h4>
+      <div class="row responsive-sm">
+        <div class="col">
+          <button type="button" class="button button-large button-positive button-block" ng-click="vm.goToCheckin()">Checkin for a Flight</button>
+        </div>
+        <div class="col">
+          <button type="button" class="button button-large button-positive button-block" ng-click="vm.goToScanBoardingPass()">Scan Boarding Pass</button>
+        </div>
+        <div class="col">
+          <button type="button" class="button button-large button-positive button-block" ng-click="vm.goToManualInput()">Manually Find Flight</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="flightfinder-container"></section>
+
+    <section id="flight-finder-checkin-section" class="flightfinder-container">
+      <h4>Check In</h4>
+      <div class="row responsive-sm">
+        <div class="col">
+          <label class="item item-input">
+            <input type="text" id="reservation" placeholder="Reservation Number" ng-model="vm.profile.username">
+          </label>
+        </div>
+      </div>
+      <div class="row responsive-sm">
+        <div class="col">
+          <button type="button" class="button button-large button-positive button-block" ng-click="alert()">Check In and Manage Flight</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="flightfinder-container"></section>
+
+    <section id="flight-finder-scan-section" class="flightfinder-container">
+      <h4>Scan Boarding Pass</h4>
+      <div>
+        <div class="row responsive-sm">
+          <div class="col">
+            <label class="item item-input">
+            <input type="text" id="reservation" placeholder="Reservation Number" ng-model="vm.profile.username">
+          </label>
+          </div>
+        </div>
+        <div class="row responsive-sm">
+          <div class="col">
+            <button type="button" class="button button-large button-positive button-block" ng-click="alert()">Scan Boarding Pass and Manage Flight</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="flightfinder-container"></section>
+
+    <section id="flight-finder-manual-section" class="flightfinder-container">
+      <h4>Find Flight Manualy</h4>
+      <div class="row responsive-sm">
+        <div class="error" ng-show="vm.hasError('AirportRequestFailed')">
+            Could not load airport location - please enter manually.
+        </div>
+        <div class="col">
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Step 1: Find departure airport
+            </div>
+            <select id="airport" 
+                ng-change="vm.getFlightByDepaureLocation()" 
+                ng-model="vm.selectedAirport"
+                ng-options="airport as vm.createDisplayAirportOption(airport) for airport in vm.airports">
+              <option ng-selected>Select Departure Airport</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="row responsive-sm">
+        <div class="col">
+          <div class="error" ng-show="vm.hasError('AirportRequestFailed')">
+            Could not load flights for airport location - please enter manually.
+          </div>
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Step 2: Select Fligt Number
+            </div>
+            <select id="flight" 
+                ng-model="vm.selectedFlight" 
+                ng-options="flight as vm.createDisplayFlightOption(flight) for flight in vm.departingFlightsForAirport">
+              <option ng-selected>Select Flight</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="row responsive-sm" ng-show="vm.isFlightSelected()">
+        <div class="col">
+          <label>Step 3: Confirm Fligt Details:</label>
+          <div class="error" ng-show="vm.hasError('AirportRequestFailed')">
+            Could not load flights details.
+          </div>
+        </div>
+      </div>
+      <div class="row" ng-show="vm.isFlightSelected()">
+        <div class="col">
+          Airport Details: 
+        </div>
+      </div>
+      <div class="row" ng-show="vm.isFlightSelected()">
+        <div class="col col-50">
+          Name: {{vm.selectedAirport.name}}        </div>
+        <div class="col col-50">
+          Airport Code: {{vm.selectedAirport.code}}
+        </div>
+      </div>
+      <div class="row" ng-show="vm.isFlightSelected()">
+        <div class="col col-50">
+          City: {{vm.selectedAirport.city}}
+        </div>
+        <div class="col col-50">
+          Country: {{vm.selectedAirport.country}}
+        </div>
+      </div>
+
+      <div class="row" ng-show="vm.isFlightSelected()">
+        <div class="col">
+          Flight Details:
+        </div>
+      </div>
+      <div class="row" ng-show="vm.isFlightSelected()">
+        <div class="col col-50">
+          Airline: {{vm.selectedFlight.operatingCarrier.airline}}
+        </div>
+        <div class="col col-50">
+          Flight Number: {{vm.selectedFlight.operatingCarrier.airlineCode}}{{vm.selectedFlight.operatingCarrier.flightNumber}}
+        </div>
+      </div>
+      <div class="row" ng-show="vm.isFlightSelected()">
+        <div class="col col-50">
+          Aircraft Type: {{vm.selectedFlight.aircraft}}
+        </div>
+        <div class="col col-50">
+          Flight Status: {{vm.selectedFlight.statusText}} ({{vm.selectedFlight.status}})
+        </div>
+      </div>
+      <div class="row" ng-show="vm.isFlightSelected()">
+        <div class="col col-50">
+          Duration: {{vm.selectedFlight.duration}} minutes
+        </div>
+        <div class="col col-50">
+          Terminal: {{vm.selectedFlight.terminal}}
+        </div>
+      </div>
+      <div class="row" ng-show="vm.isFlightSelected()">
+        <div class="col col-50">
+          Scheduled Departure Date: {{vm.selectedFlight.scheduled | date:'medium'}}
+        </div>
+        <div class="col col-50">
+          Estimated Departure Date: {{vm.selectedFlight.estimated | date:'medium'}}
+        </div>        
+      </div>
+      <div class="row">
+        <div class="col">
+          <button type="button" class="button button-large button-positive button-block" ng-click="alert()">Manage Flight</button>
+        </div>
+      </div>
+    </section>
+  </ion-content>
+</ion-view>

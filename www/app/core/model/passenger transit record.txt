@@ -1,0 +1,68 @@
+PassengerTransitRecord {
+	profileId: string,
+	reservationId: string,
+	transitStatus: string, [NOT_STARTED, TO_AIRPORT, AT_AIRPORT, AIRPORT_CHECKIN, AIRPORT_SECURITY, AIRPORT_COMMERICAL, AIRPORT_DEPARTURE_GATE, IN_AIR, FROM_AIRPORT],
+	transitStartTime: Date
+	scheduledDepartureTime: Date
+	scheduledArrivalTime: Date,
+	flightDuration: number,
+	actualDepartureTime: Date,
+	estimateArrivalTime: Date,
+	mode: string, [EXPRESS, RELAXED]
+	securityWaitTime: number
+	currentAirport: string,
+	currentFlightNumber: string,
+	airlineCode: string,
+	departureLocation: string,
+	arrivalLocation: string,
+	associateCompany: string,
+	businessMissionGroup: [],
+	lastKnownLocation: string,
+	synchronized: boolean,
+	tripStage: [OUTBOUND, INBOUND],
+	basket: {
+		
+	}
+}
+
+Profile: {
+	profileId: string,
+	emailAddress: string,
+	firstName: string,
+	lastName: string,
+	dateOfBirth: Date,
+	nationality: string,
+	registrationDate: string,
+	company: {
+		companyId: string,
+		companyName: string,
+		companyPerks: {
+		},
+		rawLinkedInCompanyData: {}
+	},
+	job: {
+		position: string,
+		rawLinkedInProfileData: {}
+	},	
+	linkedInAuth: {
+		token: string,
+		expiry: number,
+		acquired: Date,
+	},
+	preferences: {
+		shareLocation: boolean,
+		getFlightNotifications: boolean
+	},
+}
+
+ApplicationCache {
+	airports: string[],
+	profile: Object,
+}
+
+SessionCache {
+	beaconRegistration: []
+	offers: []
+}
+
+- Handle dropped signalR
